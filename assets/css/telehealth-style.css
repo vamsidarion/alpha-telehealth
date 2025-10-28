@@ -1,0 +1,98 @@
+/* telehealth-style.css */
+
+/* --- Global --- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #eaf1eb 0%, #f8f9f7 100%);
+  margin: 0;
+  color: #2c3e50;
+}
+
+h1, h2 {
+  color: #2c6e49;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+/* --- Section Cards --- */
+section {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  padding: 30px;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease;
+}
+section:hover {
+  transform: translateY(-3px);
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #2c6e49, #3ca66d);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: linear-gradient(90deg, #3ca66d, #2c6e49);
+  box-shadow: 0 4px 10px rgba(44,110,73,0.3);
+}
+
+/* --- Tables --- */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+th {
+  background: #2c6e49;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+th, td {
+  padding: 14px 16px;
+}
+tr:nth-child(even) {
+  background: #f8f9f8;
+}
+tr:hover {
+  background: #eaf4ec;
+}
+
+/* --- Profile Section --- */
+.box {
+  background: #f5faf7;
+  border-left: 5px solid #2c6e49;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* --- Hero Section (Optional) --- */
+.hero {
+  background: url('../assets/images/forest-bg.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 20px;
+}
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}

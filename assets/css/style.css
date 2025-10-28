@@ -1,0 +1,442 @@
+/* Import Google Fonts at the top */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    /* New green color palette */
+    --primary-color: #3a5a40; /* Deeper, more natural green */
+    --primary-hover: #303d2b; /* Darker shade */
+    --secondary-color: #588157;
+    --accent-color: #a3b18a; /* Muted green for placeholders */
+    --bg-light: #f8f9fa; /* A very light, clean background */
+    --card-bg: #ffffff;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --border-light: #eef0f2;
+}
+
+body { 
+    font-family: var(--font-body); 
+    margin:0; 
+    background: var(--bg-light); 
+    color: var(--text-dark);
+}
+
+/* === HERO SECTION (Homepage, Admin, Doctor) === */
+.hero-main {
+    position: relative;
+    padding: 80px 20px;
+    padding-top: 150px;
+    text-align: center;
+    color: var(--text-light);
+    background: url('https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center;
+    background-size: cover;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-main::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+.hero-main > * { 
+    position: relative;
+    z-index: 2;
+}
+
+
+
+/* Nav Bar (Homepage, Admin, Doctor) */
+.hero-main nav {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+.nav-logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--text-light);
+    text-decoration: none;
+}
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+.nav-links a.nav-button {
+    background: var(--text-light);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+.nav-links a.nav-button:hover {
+    background: #eee;
+}
+
+/* Hero Content (Homepage, Admin, Doctor) */
+.hero-content {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+}
+.hero-content h2 {
+    font-family: var(--font-heading);
+    font-size: 3em;
+    margin: 0 0 15px 0;
+}
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* === MAIN CONTENT AREA === */
+.container { 
+    max-width:1200px; 
+    margin: 60px auto; 
+    padding:0 20px; 
+}
+.section-title { 
+    text-align:center; 
+    margin-bottom:40px; 
+    color: var(--primary-color); 
+    font-size:2.2em; 
+    font-family: var(--font-heading);
+}
+
+/* === CARD STYLES (Homepage & Admin) === */
+.cards { 
+    display:grid; 
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); 
+    gap:25px; 
+}
+.card { 
+    background: var(--card-bg); 
+    padding: 0;
+    border-radius:10px; 
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    text-align: left;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow:0 6px 16px rgba(0,0,0,0.12);
+}
+.card-image {
+    height: 200px;
+    background-color: var(--accent-color);
+    background-image: linear-gradient(to right, var(--accent-color), var(--secondary-color));
+    opacity: 0.7;
+}
+.card-content {
+    padding: 25px;
+}
+.card h3 { 
+    color: var(--primary-color); 
+    margin-top: 0;
+    margin-bottom:15px; 
+    font-family: var(--font-heading);
+    font-size: 1.4em;
+}
+.card p { 
+    color: #555; 
+    margin-bottom:20px; 
+    line-height: 1.6;
+}
+.card a { 
+    display:inline-block; 
+    padding:10px 22px; 
+    background: var(--primary-color); 
+    color: var(--text-light); 
+    text-decoration:none; 
+    border-radius:5px;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+.card a:hover { 
+    background: var(--primary-hover); 
+}
+
+/* Styles for text-only cards (Admin Dashboard) */
+.card.text-only .card-content {
+    padding: 25px;
+    text-align: center;
+}
+.card.text-only h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+.card.text-only p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.card.text-only h2.small-text {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+/* === INTERNAL CONTENT (Doctor Dashboard) === */
+.section {
+    background: var(--card-bg);
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+.section h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 10px;
+}
+
+/* *** NEW TABLE STYLE *** */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* For responsive tables */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95em;
+    border: none; /* No main border */
+}
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: none; /* No cell borders */
+    border-bottom: 1px solid var(--border-light); /* Only horizontal lines */
+}
+th {
+    background: var(--bg-light); /* Light background for header */
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+tr:last-child td {
+    border-bottom: none; /* No border on the last row */
+}
+tr:nth-child(even) {
+    background: #fdfdfd; /* Very subtle alternating color */
+}
+tr:hover {
+    background: #f8f9fa;
+}
+/* *** END NEW TABLE STYLE *** */
+
+
+/* Form Styles (Doctor Dashboard) */
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    font-family: var(--font-body);
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+textarea:focus,
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(58, 90, 64, 0.2);
+    outline: none;
+}
+input[type="submit"] {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    padding: 10px 22px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+input[type="submit"]:hover {
+    background: var(--primary-color);
+}
+
+/* Button Styles (Doctor Dashboard) */
+.button {
+    text-decoration: none;
+    color: var(--text-light);
+    background: var(--secondary-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9em;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background: var(--primary-color);
+    color: var(--text-light);
+}
+
+/* Box for saved descriptions (Doctor Dashboard) */
+.box {
+    background: var(--bg-light);
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border-left: 4px solid var(--accent-color);
+    font-size: 0.95em;
+}
+.box small {
+    color: #777;
+    display: block;
+    margin-top: 5px;
+}
+
+/* === FOOTER (All Pages) === */
+footer { 
+    background: var(--primary-color); 
+    color: rgba(255, 255, 255, 0.8); 
+    padding:40px 20px; 
+    text-align:center; 
+    margin-top: 60px;
+}
+footer a { color: var(--text-light); margin:0 10px; text-decoration:none; font-weight: 600; }
+footer a:hover { text-decoration:underline; }
+
+
+/* === RESPONSIVE STYLES === */
+@media (max-width: 768px) {
+    .hero-main nav {
+        flex-direction: column;
+        padding: 10px;
+        width: 100%;
+        border-radius: 0;
+        top: 0;
+    }
+    .nav-links {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .nav-links a {
+        margin-left: 10px;
+    }
+    .hero-main {
+        padding-top: 220px; /* More space for stacked nav */
+    }
+    .hero-content h2 {
+        font-size: 2.2em;
+    }
+    .section-title {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .nav-links a {
+        margin-left: 0;
+        width: 80%;
+        text-align: center;
+    }
+    .nav-links a.nav-button {
+        padding: 10px;
+    }
+}
+
+/* === STATUS BADGES === */
+/* Styles for .status-badge in tables */
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 15px; /* Pill shape */
+    font-size: 0.85em;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--text-dark); /* Default text color (dark) */
+    background-color: #e0e0e0; /* Default background (grey) */
+    text-shadow: none; /* Ensure no text-shadow is inherited */
+}
+
+/* Specific status colors */
+.status-badge.status-pending {
+    background-color: #fff0c2;
+    color: #7a5c00;
+}
+.status-badge.status-Confirmed { /* Matches 'Confirmed' from your PHP */
+    background-color: #d1f7c4;
+    color: #2c522a;
+}
+.status-badge.status-completed {
+    background-color: #d1f7c4;
+    color: #2c522a;
+}
+.status-badge.status-cancelled {
+    background-color: #f7c4c4;
+    color: #6b2a2a;
+}
+
+/* === FILTER FORM STYLE === */
+/* Style for the filter bar on manager page */
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap; /* Allows form to stack on small screens */
+    gap: 15px;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+.filter-form form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    margin: 0;
+}
+
